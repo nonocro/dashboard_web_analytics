@@ -1,0 +1,246 @@
+{
+    "data" : [
+        {   
+            "langue": "français",
+            "categorie": "puzzlegame",
+            "country": "france",
+            "retention": [
+                { "day": "D1", "optimiste": 100, "median": 100, "pessimiste": 100 },
+                { "day": "D2", "optimiste": 19.49, "median": 10.57, "pessimiste": 7.00 },
+                { "day": "D3", "optimiste": 9.32, "median": 4.86, "pessimiste": 3.32 },
+                { "day": "D4", "optimiste": 7.41, "median": 4.48, "pessimiste": 3.08 },
+                { "day": "D5", "optimiste": 6.50, "median": 4.10, "pessimiste": 2.84 },
+                { "day": "D6", "optimiste": 5.90, "median": 3.85, "pessimiste": 2.69 },
+                { "day": "D7", "optimiste": 5.60, "median": 3.72, "pessimiste": 2.60 },
+                { "day": "D15", "optimiste": 2.43, "median": 1.52, "pessimiste": 1.07 },
+                { "day": "D30", "optimiste": 1.80, "median": 0.99, "pessimiste": 0.82 },
+                { "day": "D60", "optimiste": 1.13, "median": 0.82, "pessimiste": 0.66 },
+                { "day": "D90", "optimiste": 0.91, "median": 0.56, "pessimiste": 0.36 }
+            ],
+            "monthlyMetrics": [
+                { "mois": 1, "playGameMin": 63, "newUsers": 1377, "installRatio": 44.89, "arppu": 3.42, "arpDAU": 0.00022, "conversion": 0.01, "cpi": 0.087, "ctr": 6.35, "fraudShare": 2 },
+                { "mois": 2, "playGameMin": 68, "newUsers": 1200, "installRatio": 48.00, "arppu": 3.42, "arpDAU": 0.00030, "conversion": 0.015, "cpi": 0.09, "ctr": 6.45, "fraudShare": 2 },
+                { "mois": 3, "playGameMin": 74, "newUsers": 1500, "installRatio": 51.00, "arppu": 3.42, "arpDAU": 0.00038, "conversion": 0.02, "cpi": 0.092, "ctr": 6.60, "fraudShare": 2 },
+                { "mois": 4, "playGameMin": 90, "newUsers": 787, "installRatio": 52.88, "arppu": 3.42, "arpDAU": 0.00047, "conversion": 0.01, "cpi": 0.095, "ctr": 6.80, "fraudShare": 2 },
+                { "mois": 5, "playGameMin": 80, "newUsers": 1499, "installRatio": 49.50, "arppu": 3.42, "arpDAU": 0.00040, "conversion": 0.015, "cpi": 0.092, "ctr": 7.00, "fraudShare": 2 },
+                { "mois": 6, "playGameMin": 51, "newUsers": 1300, "installRatio": 36.59, "arppu": 3.42, "arpDAU": 0.00045, "conversion": 0.02, "cpi": 0.093, "ctr": 7.51, "fraudShare": 2 },
+                { "mois": 7, "playGameMin": 55, "newUsers": 624, "installRatio": 42.00, "arppu": 3.42, "arpDAU": 0.0026, "conversion": 0.06, "cpi": 0.095, "ctr": 7.12, "fraudShare": 1.23 },
+                { "mois": 8, "playGameMin": 18, "newUsers": 1000, "installRatio": 52.37, "arppu": 3.42, "arpDAU": 0.00080, "conversion": 0.05, "cpi": 0.096, "ctr": 7.20, "fraudShare": 1.5 },
+                { "mois": 9, "playGameMin": 21, "newUsers": 950, "installRatio": 48.50, "arppu": 3.42, "arpDAU": 0.00019, "conversion": 0.04, "cpi": 0.097, "ctr": 7.30, "fraudShare": 1 },
+                { "mois": 10, "playGameMin": 25, "newUsers": 325, "installRatio": 49.71, "arppu": 5.48, "arpDAU": 0.00050, "conversion": 0.045, "cpi": 0.099, "ctr": 7.12, "fraudShare": 1.23 },
+                { "mois": 11, "playGameMin": 27, "newUsers": 400, "installRatio": 46.00, "arppu": 0.03, "arpDAU": 0.00060, "conversion": 0.05, "cpi": 0.1, "ctr": 7.5, "fraudShare": 1.1 },
+                { "mois": 12, "playGameMin": 29, "newUsers": 350, "installRatio": 48.00, "arppu": 0.03, "arpDAU": 0.00040, "conversion": 0.05, "cpi": 0.099, "ctr": 7.4, "fraudShare": 1 }
+            ]
+        },
+        {
+            "langue": "français",
+            "categorie": "puzzlegame",
+            "country": "canada",
+            "retention": [
+                { "day": "D1", "optimiste": 100, "median": 100, "pessimiste": 100 },
+                { "day": "D2", "optimiste": 23.20, "median": 19.46, "pessimiste": 15.72 },
+                { "day": "D3", "optimiste": 14.60, "median": 13.10, "pessimiste": 10.56 },
+                { "day": "D4", "optimiste": 8.06, "median": 6.73, "pessimiste": 5.40 },
+                { "day": "D5", "optimiste": 6.79, "median": 5.68, "pessimiste": 4.45 },
+                { "day": "D6", "optimiste": 6.16, "median": 5.13, "pessimiste": 4.01 },
+                { "day": "D7", "optimiste": 5.52, "median": 4.59, "pessimiste": 3.56 },
+                { "day": "D15", "optimiste": 2.41, "median": 1.89, "pessimiste": 1.37 },
+                { "day": "D30", "optimiste": 1.50, "median": 1.28, "pessimiste": 1.07 },
+                { "day": "D60", "optimiste": 0.56, "median": 0.45, "pessimiste": 0.33 },
+                { "day": "D90", "optimiste": 0.32, "median": 0.25, "pessimiste": 0.19 }
+            ],
+            "monthlyMetrics": []
+          },
+          {
+            "langue": "français",
+            "categorie": "arcade",
+            "country": "france",
+            "retention": [
+                { "day": "D1", "optimiste": 100, "median": 100, "pessimiste": 100 },
+                { "day": "D2", "optimiste": 36.99, "median": 26.87, "pessimiste": 15.62 },
+                { "day": "D3", "optimiste": 27.62, "median": 19.52, "pessimiste": 10.78 },
+                { "day": "D4", "optimiste": 22.93, "median": 15.85, "pessimiste": 8.36 },
+                { "day": "D5", "optimiste": 18.24, "median": 12.17, "pessimiste": 5.94 },
+                { "day": "D6", "optimiste": 17.99, "median": 11.53, "pessimiste": 5.58 },
+                { "day": "D7", "optimiste": 17.74, "median": 10.88, "pessimiste": 5.22 },
+                { "day": "D15", "optimiste": 14.36, "median": 7.84, "pessimiste": 3.15 },
+                { "day": "D30", "optimiste": 10.98, "median": 4.80, "pessimiste": 1.07 },
+                { "day": "D60", "optimiste": 8.03,  "median": 3.32,  "pessimiste": 0.58 },
+                { "day": "D90", "optimiste": 5.07, "median": 1.83, "pessimiste": 0.09 }
+            ],
+            "monthlyMetrics": [
+              { "mois": 1,  "playGameMin": 19, "newUsers": 246, "installRatio": 16.9,  "arppu": 3.82, "arpDAU": 0.017, "conversion": 0.66,  "cpi": 0.059, "ctr": 7.0,  "fraudShare": 0.87 },
+              { "mois": 2,  "playGameMin": 19, "newUsers": 250, "installRatio": 15.5,  "arppu": 5.00, "arpDAU": 0.02,  "conversion": 0.70,  "cpi": 0.059, "ctr": 7.5,  "fraudShare": 0.87 },
+              { "mois": 3,  "playGameMin": 19, "newUsers": 255, "installRatio": 14.7,  "arppu": 19.00,"arpDAU": 0.025, "conversion": 0.72,  "cpi": 0.059, "ctr": 8.0,  "fraudShare": 0.87 },
+              { "mois": 4,  "playGameMin": 19, "newUsers": 260, "installRatio": 14.34, "arppu": 5.00, "arpDAU": 0.026, "conversion": 0.80,  "cpi": 0.059, "ctr": 8.5,  "fraudShare": 0.87 },
+              { "mois": 5,  "playGameMin": 19, "newUsers": 265, "installRatio": 14.0,  "arppu": 4.65, "arpDAU": 0.02,  "conversion": 0.85,  "cpi": 0.059, "ctr": 9.0,  "fraudShare": 2.43 },
+              { "mois": 6,  "playGameMin": 19, "newUsers": 270, "installRatio": 13.8,  "arppu": 4.20, "arpDAU": 0.03,  "conversion": 0.90,  "cpi": 0.059, "ctr": 8.5,  "fraudShare": 2.43 },
+              { "mois": 7,  "playGameMin": 19, "newUsers": 275, "installRatio": 13.5,  "arppu": 6.50, "arpDAU": 0.10,  "conversion": 0.95,  "cpi": 0.059, "ctr": 9.0,  "fraudShare": 2.43 },
+              { "mois": 8,  "playGameMin": 19, "newUsers": 280, "installRatio": 13.0,  "arppu": 7.20, "arpDAU": 0.15,  "conversion": 1.00,  "cpi": 0.059, "ctr": 9.0,  "fraudShare": 2.43 },
+              { "mois": 9,  "playGameMin": 19, "newUsers": 285, "installRatio": 7.29,  "arppu": 8.00, "arpDAU": 0.18,  "conversion": 1.10,  "cpi": 0.059, "ctr": 9.2,  "fraudShare": 2.43 },
+              { "mois": 10, "playGameMin": 19, "newUsers": 290, "installRatio": 9.5,   "arppu": 10.00,"arpDAU": 0.21, "conversion": 1.20,  "cpi": 0.059, "ctr": 9.5,  "fraudShare": 0.6 },
+              { "mois": 11, "playGameMin": 19, "newUsers": 295, "installRatio": 10.5,  "arppu": 12.41,"arpDAU": 0.23, "conversion": 1.77,  "cpi": 0.059, "ctr": 9.8,  "fraudShare": 0.6 },
+              { "mois": 12, "playGameMin": 19, "newUsers": 287, "installRatio": 21.62, "arppu": 15.00,"arpDAU": 0.25, "conversion": 2.00,  "cpi": 0.059, "ctr": 9.92, "fraudShare": 0.6 }
+            ]
+          },
+          {
+            "langue": "français",
+            "categorie": "arcade",
+            "country": "canada",
+            "retention": [
+                { "day": "D1", "optimiste": 100, "median": 100, "pessimiste": 100 },
+                { "day": "D2", "optimiste": 31.11, "median": 22.82, "pessimiste": 12.89 },
+                { "day": "D3", "optimiste": 23.53, "median": 15.37, "pessimiste": 8.41 },
+                { "day": "D4", "optimiste": 19.74, "median": 11.65, "pessimiste": 5.53 },
+                { "day": "D5", "optimiste": 15.95, "median": 7.93, "pessimiste": 2.65 },
+                { "day": "D6", "optimiste": 16.44, "median": 8.26, "pessimiste": 2.68 },
+                { "day": "D7", "optimiste": 16.92, "median": 8.59, "pessimiste": 2.71 },
+                { "day": "D15", "optimiste": 14.48, "median": 6.22, "pessimiste": 1.72 },
+                { "day": "D30", "optimiste": 11.04, "median": 3.85, "pessimiste": 0.37 },
+                { "day": "D60", "optimiste": 8.51, "median": 2.13, "pessimiste": 0.26 },
+                { "day": "D90", "optimiste": 5.98, "median": 1.90, "pessimiste": 0.14 }
+            ],
+            "monthlyMetrics": []
+          },
+          {
+            "langue": "anglais",
+            "categorie": "puzzlegame",
+            "country": "royaume-uni",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 33.80, "median": 31.35, "pessimiste": 29.31 },
+                { "day": "D3",  "optimiste": 24.66, "median": 21.84, "pessimiste": 20.03 },
+                { "day": "D4",  "optimiste": 15.51, "median": 12.33, "pessimiste": 10.75 },
+                { "day": "D5",  "optimiste": 12.10, "median": 10.32, "pessimiste": 8.68 },
+                { "day": "D6",  "optimiste": 10.69, "median": 8.80,  "pessimiste": 7.11 },
+                { "day": "D7",  "optimiste": 9.28,  "median": 7.29,  "pessimiste": 5.53 },
+                { "day": "D15", "optimiste": 5.79,  "median": 4.58,  "pessimiste": 3.55 },
+                { "day": "D30", "optimiste": 3.46,  "median": 2.39,  "pessimiste": 1.45 },
+                { "day": "D60", "optimiste": 1.57,  "median": 0.90,  "pessimiste": 0.65 },
+                { "day": "D90", "optimiste": 1.07,  "median": 0.67,  "pessimiste": 0.42 }
+            ],
+            "monthlyMetrics": []
+          },
+          {
+            "langue": "anglais",
+            "categorie": "arcade",
+            "country": "royaume-uni",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 28.78, "median": 19.49, "pessimiste": 9.53 },
+                { "day": "D3",  "optimiste": 20.67, "median": 12.42, "pessimiste": 5.01 },
+                { "day": "D4",  "optimiste": 16.94, "median": 10.50, "pessimiste": 3.35 },
+                { "day": "D5",  "optimiste": 13.21, "median": 7.90,  "pessimiste": 2.53 },
+                { "day": "D6",  "optimiste": 13.38, "median": 7.41,  "pessimiste": 2.08 },
+                { "day": "D7",  "optimiste": 13.56, "median": 6.92,  "pessimiste": 1.63 },
+                { "day": "D15", "optimiste": 8.80,  "median": 2.99,  "pessimiste": 1.16 },
+                { "day": "D30", "optimiste": 6.32,  "median": 2.03,  "pessimiste": 0.35 },
+                { "day": "D60", "optimiste": 3.82,  "median": 1.04,  "pessimiste": 0.19 },
+                { "day": "D90", "optimiste": 2.31,  "median": 0.55,  "pessimiste": 0.09 }
+            ],
+            "monthlyMetrics": []
+          },
+          {
+            "langue": "anglais",
+            "categorie": "puzzlegame",
+            "country": "united-states",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 35.89, "median": 29.17, "pessimiste": 21.80 },
+                { "day": "D3",  "optimiste": 25.44, "median": 21.32, "pessimiste": 17.23 },
+                { "day": "D4",  "optimiste": 16.23, "median": 12.88, "pessimiste": 10.66 },
+                { "day": "D5",  "optimiste": 12.26, "median": 9.47,  "pessimiste": 7.89 },
+                { "day": "D6",  "optimiste": 10.99, "median": 8.72,  "pessimiste": 6.40 },
+                { "day": "D7",  "optimiste": 9.72,  "median": 7.97,  "pessimiste": 4.92 },
+                { "day": "D15", "optimiste": 7.35,  "median": 6.01,  "pessimiste": 3.79 },
+                { "day": "D30", "optimiste": 5.01,  "median": 3.29,  "pessimiste": 1.34 },
+                { "day": "D60", "optimiste": 2.68,  "median": 1.26,  "pessimiste": 0.66 },
+                { "day": "D90", "optimiste": 1.33,  "median": 0.77,  "pessimiste": 0.35 }
+            ],
+            "monthlyMetrics": [
+                { "mois": 1, "playGameMin": 41, "newUsers": 146, "installRatio": 30, "arppu": 11.72, "arpDAU": 0.16, "conversion": 1, "cpi": 0.4, "ctr": 6.5, "fraudShare": 1.99 },
+                { "mois": 2, "playGameMin": 44, "newUsers": 150, "installRatio": 32, "arppu": 12.00, "arpDAU": 0.12, "conversion": 1.1, "cpi": 0.4, "ctr": 6.8, "fraudShare": 1.95 },
+                { "mois": 3, "playGameMin": 47, "newUsers": 155, "installRatio": 34, "arppu": 12.50, "arpDAU": 0.13, "conversion": 1.2, "cpi": 0.4, "ctr": 7.0, "fraudShare": 1.90 },
+                { "mois": 4, "playGameMin": 54, "newUsers": 160, "installRatio": 37.68, "arppu": 14.79, "arpDAU": 0.14, "conversion": 1, "cpi": 0.4, "ctr": 7.3, "fraudShare": 1.9 },
+                { "mois": 5, "playGameMin": 50, "newUsers": 165, "installRatio": 38, "arppu": 13.50, "arpDAU": 0.15, "conversion": 1.61, "cpi": 0.4, "ctr": 7.5, "fraudShare": 2.0 },
+                { "mois": 6, "playGameMin": 52, "newUsers": 170, "installRatio": 39, "arppu": 14.00, "arpDAU": 0.16, "conversion": 1.5, "cpi": 0.4, "ctr": 7.8, "fraudShare": 1.9 },
+                { "mois": 7, "playGameMin": 50, "newUsers": 200, "installRatio": 40, "arppu": 15.00, "arpDAU": 0.17, "conversion": 1.4, "cpi": 0.4, "ctr": 7.6, "fraudShare": 1.85 },
+                { "mois": 8, "playGameMin": 47, "newUsers": 210, "installRatio": 41, "arppu": 16.00, "arpDAU": 0.18, "conversion": 1.2, "cpi": 0.4, "ctr": 7.7, "fraudShare": 1.8 },
+                { "mois": 9, "playGameMin": 48, "newUsers": 220, "installRatio": 41, "arppu": 17.00, "arpDAU": 0.19, "conversion": 1.0, "cpi": 0.4, "ctr": 7.9, "fraudShare": 1.75 },
+                { "mois": 10, "playGameMin": 41, "newUsers": 251, "installRatio": 41.49, "arppu": 5.00, "arpDAU": 0.04, "conversion": 0.72, "cpi": 0.4, "ctr": 7, "fraudShare": 1.38 },
+                { "mois": 11, "playGameMin": 42, "newUsers": 260, "installRatio": 40, "arppu": 10.00, "arpDAU": 0.12, "conversion": 1.1, "cpi": 0.4, "ctr": 7.5, "fraudShare": 1.5 },
+                { "mois": 12, "playGameMin": 41, "newUsers": 269, "installRatio": 41, "arppu": 20.98, "arpDAU": 0.28, "conversion": 1.32, "cpi": 0.4, "ctr": 8.14, "fraudShare": 1.38 }
+            ]
+          },
+          {
+            "langue": "anglais",
+            "categorie": "arcade",
+            "country": "united-states",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 29.13, "median": 18.66, "pessimiste": 8.20 },
+                { "day": "D3",  "optimiste": 22.27, "median": 13.39, "pessimiste": 3.62 },
+                { "day": "D4",  "optimiste": 17.40, "median": 10.89, "pessimiste": 2.23 },
+                { "day": "D5",  "optimiste": 14.33, "median": 8.39,  "pessimiste": 1.40 },
+                { "day": "D6",  "optimiste": 13.67, "median": 7.69,  "pessimiste": 1.01 },
+                { "day": "D7",  "optimiste": 12.33, "median": 6.99,  "pessimiste": 0.61 },
+                { "day": "D15", "optimiste": 8.47,  "median": 3.30,  "pessimiste": 0.46 },
+                { "day": "D30", "optimiste": 5.71,  "median": 2.13,  "pessimiste": 0.10 },
+                { "day": "D60", "optimiste": 2.67,  "median": 0.97,  "pessimiste": 0.04 },
+                { "day": "D90", "optimiste": 1.37,  "median": 0.54,  "pessimiste": 0.02 }
+            ],
+            "monthlyMetrics": [
+                { "mois": 1, "playGameMin": 60, "newUsers": 150, "installRatio": 13, "arppu": 17.97, "arpDAU": 0.047, "conversion": 1.35, "cpi": 0.2, "ctr": 6.97, "fraudShare": 0.35 },
+                { "mois": 2, "playGameMin": 60, "newUsers": 180, "installRatio": 14, "arppu": 21.00, "arpDAU": 0.060, "conversion": 1.50, "cpi": 0.2, "ctr": 7.10, "fraudShare": 0.35 },
+                { "mois": 3, "playGameMin": 60, "newUsers": 212, "installRatio": 15, "arppu": 24.72, "arpDAU": 0.097, "conversion": 1.90, "cpi": 0.2, "ctr": 7.30, "fraudShare": 0.35 },
+                { "mois": 4, "playGameMin": 60, "newUsers": 230, "installRatio": 18, "arppu": 23.00, "arpDAU": 0.090, "conversion": 0.57, "cpi": 0.2, "ctr": 7.50, "fraudShare": 0.35 },
+                { "mois": 5, "playGameMin": 60, "newUsers": 210, "installRatio": 16, "arppu": 22.00, "arpDAU": 0.080, "conversion": 0.90, "cpi": 0.2, "ctr": 7.80, "fraudShare": 0.35 },
+                { "mois": 6, "playGameMin": 60, "newUsers": 180, "installRatio": 15, "arppu": 18.00, "arpDAU": 0.085, "conversion": 1.20, "cpi": 0.2, "ctr": 8.00, "fraudShare": 0.35 },
+                { "mois": 7, "playGameMin": 60, "newUsers": 185, "installRatio": 14, "arppu": 14.50, "arpDAU": 0.075, "conversion": 1.10, "cpi": 0.2, "ctr": 8.20, "fraudShare": 0.35 },
+                { "mois": 8, "playGameMin": 60, "newUsers": 175, "installRatio": 13, "arppu": 12.00, "arpDAU": 0.065, "conversion": 0.95, "cpi": 0.2, "ctr": 8.50, "fraudShare": 0.35 },
+                { "mois": 9, "playGameMin": 60, "newUsers": 160, "installRatio": 12, "arppu": 11.17, "arpDAU": 0.054, "conversion": 1.00, "cpi": 0.2, "ctr": 9.00, "fraudShare": 0.35 },
+                { "mois": 10, "playGameMin": 60, "newUsers": 127, "installRatio": 8, "arppu": 6.50, "arpDAU": 0.085, "conversion": 0.82, "cpi": 0.2, "ctr": 10.15, "fraudShare": 0.35 },
+                { "mois": 11, "playGameMin": 60, "newUsers": 116, "installRatio": 11, "arppu": 16.95, "arpDAU": 0.080, "conversion": 1.00, "cpi": 0.2, "ctr": 9.50, "fraudShare": 0.35 },
+                { "mois": 12, "playGameMin": 60, "newUsers": 130, "installRatio": 10, "arppu": 5.99, "arpDAU": 0.085, "conversion": 1.10, "cpi": 0.2, "ctr": 9.92, "fraudShare": 0.35 }
+            ]
+          },
+          {
+            "langue": "anglais",
+            "categorie": "puzzlegame",
+            "country": "inde",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 28.73, "median": 21.22, "pessimiste": 14.44 },
+                { "day": "D3",  "optimiste": 15.17, "median": 7.42,  "pessimiste": 3.87 },
+                { "day": "D4",  "optimiste": 8.16,  "median": 3.44,  "pessimiste": 2.04 },
+                { "day": "D5",  "optimiste": 3.77,  "median": 1.36,  "pessimiste": 1.04 },
+                { "day": "D6",  "optimiste": 2.38,  "median": 0.91,  "pessimiste": 0.89 },
+                { "day": "D7",  "optimiste": 1.92,  "median": 0.62,  "pessimiste": 0.65 },
+                { "day": "D15", "optimiste": 1.73,  "median": 0.57,  "pessimiste": 0.58 },
+                { "day": "D30", "optimiste": 0.97,  "median": 0.36,  "pessimiste": 0.24 },
+                { "day": "D60", "optimiste": 0.39,  "median": 0.13,  "pessimiste": 0.03 },
+                { "day": "D90", "optimiste": 0.13,  "median": 0.08,  "pessimiste": 0.00 }
+            ],
+            "monthlyMetrics": []
+          },
+          {
+            "langue": "anglais",
+            "categorie": "arcade",
+            "country": "inde",
+            "retention": [
+                { "day": "D1",  "optimiste": 100,   "median": 100,   "pessimiste": 100 },
+                { "day": "D2",  "optimiste": 25.18, "median": 14.47, "pessimiste": 6.11 },
+                { "day": "D3",  "optimiste": 12.75, "median": 5.56,  "pessimiste": 2.28 },
+                { "day": "D4",  "optimiste": 7.69,  "median": 3.15,  "pessimiste": 0.95 },
+                { "day": "D5",  "optimiste": 4.23,  "median": 2.08,  "pessimiste": 0.67 },
+                { "day": "D6",  "optimiste": 2.15,  "median": 1.44,  "pessimiste": 0.49 },
+                { "day": "D7",  "optimiste": 1.90,  "median": 1.08,  "pessimiste": 0.36 },
+                { "day": "D15", "optimiste": 1.52,  "median": 0.94,  "pessimiste": 0.29 },
+                { "day": "D30", "optimiste": 0.57,  "median": 0.38,  "pessimiste": 0.13 },
+                { "day": "D60", "optimiste": 0.16,  "median": 0.05,  "pessimiste": 0.01 },
+                { "day": "D90", "optimiste": 0.00,  "median": 0.00,  "pessimiste": 0.00 }
+            ],
+            "monthlyMetrics": []
+          } 
+    ]
+}
