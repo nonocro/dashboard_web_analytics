@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Jeux - ApexCharts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ApexCharts CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f8;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      transition: all .18s;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.2rem 2rem 0.2rem 2rem;
+    }
+    .tab {
+      background: #eee;
+      border: none;
+      border-radius: 6px 6px 0 0;
+      padding: 0.7em 2em;
+      font-weight: 600;
+      cursor: pointer;
+      color: #535353;
+      font-size: 1.02rem;
+      transition: background .18s, color .18s;
+    }
+    .tab.active {
+      background: #2d87f0;
+      color: #fff;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #fff;
+      margin: 1rem 2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0001;
+      justify-content: center;
+      align-items: center;
+    }
+    label {
+      font-weight: bold;
+      margin-right: 0.3em;
+      color: #222;
+    }
+    select {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #fafafc;
+      min-width: 110px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 2rem;
+      margin: 2rem;
+    }
+    .card {
+      background: #fff;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 3px 16px #0001;
+      padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 320px;
+      min-height: 380px;
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      margin: 0 0 6px 0;
+      color: #444;
+      letter-spacing: 0.6px;
+    }
+    .no-data {
+      color: #bb3333;
+      font-size: 1.1em;
+      margin: 2em auto 3em auto;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .filters,
+      .grid {
+        margin: 0.5rem !important;
+      }
+      .grid {
+        gap: 1rem;
+      }
+      .card {
+        min-width: unset;
+        padding: 0.6rem 0.5rem 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  Dashboard Jeux - Vue Marketing : Acquisition & Conversion
+</header>
+<div class="tabs" id="userTabs">
+  <button class="tab active" data-user="marketing">Marketing</button>
+  <button class="tab" data-user="produit">Produit</button>
+  <button class="tab" data-user="direction">Direction</button>
+</div>
+<div class="filters" id="filters">
+  <!-- Les filtres seront générés ici dynamiquement -->
+</div>
+<div class="grid" id="dashboard">
+  <!-- Les graphiques seront placés ici -->
+</div>
+
+<script>
+// --- Fonctions utilitaires (async, couleur, etc) ---
+const couleurs = [
+  "#2d87f0", "#37dc70", "#fd4040", "#fdaf23", "#b700d9",
+  "#4179d0", "#17b3b4", "#e77b00", "#8e44ad", "#ffc107"
+];
+
+// Onglets utilisateur et mapping KPIs
+const userKpiMapping = {
+  marketing: [
+    { key: "newUsers", label: "Nouveaux utilisateurs" },
+    { key: "installRatio", label: "Taux d'installation (%)" },
+    { key: "conversion", label: "Conversion (%)" },
+    { key: "cpi", label: "CPI ($)" },
+    { key: "ctr", label: "CTR (%)" }
+  ],
+  produit: [
+    { key: "playGameMin", label: "Min Jeu/Joueur" },
+    { key: "arpDAU", label: "ARPDAU" }
+    // Ajoute d'autres KPIs d'engagement ici si besoin
+  ],
+  direction: [
+    { key: "arppu", label: "ARPPU ($)" },
+    { key: "conversion", label: "Conversion (%)" },
+    { key: "newUsers", label: "Nouveaux utilisateurs" },
+    { key: "cpi", label: "CPI ($)" }
+    // CA, ROI si tu ajoutes dans la data
+  ]
+};
+// Pour le titre dynamique
+const userTitles = {
+  marketing: "Vue Marketing : Acquisition & Conversion",
+  produit: "Vue Produit : Engagement Utilisateur",
+  direction: "Vue Direction : Résultats Globaux"
+};
+window.DASH_USER = "marketing"; // Par défaut
+
+// Asynchrone pour fetch JSON local
+async function chargerDonnees() {
+  const resp = await fetch('data.json');
+  if (!resp.ok) { alert("Impossible de charger data.json"); return []; }
+  const json = await resp.json();
+  return json.data || [];
+}
+
+// Pour éviter doublons dans select
+function uniq(arr) { return [...new Set(arr)]; }
+// Uppercase 1ère lettre
+function ucfirst(txt) {
+  return txt.charAt(0).toUpperCase() + txt.slice(1);
+}
+
+// Génère les options <select> à partir des data
+function updateFilters(allData) {
+  const filtersDiv = document.getElementById('filters');
+  filtersDiv.innerHTML = ''; // Reset
+
+  // Catégorie, pays, langue dynamiques
+  const categories = uniq(allData.map(d => d.categorie)).sort();
+  const pays = uniq(allData.map(d => d.country)).sort();
+  const langues = uniq(allData.map(d => d.langue)).sort();
+  const scenarios = [
+    {value: "optimiste", label: "Optimiste"},
+    {value: "median", label: "Médian"},
+    {value: "pessimiste", label: "Pessimiste"}
+  ];
+
+  // Création dynamique des selects
+  function makeSelect(id, label, options) {
+    const cont = document.createElement('div');
+    const lab = document.createElement('label');
+    lab.textContent = label;
+    lab.htmlFor = id;
+    cont.appendChild(lab);
+    const sel = document.createElement('select');
+    sel.id = id;
+    sel.name = id;
+    sel.innerHTML = `<option value="">-- Tous --</option>` +
+      options.map(opt =>
+        `<option value="${opt}">${ucfirst(opt)}</option>`).join('');
+    cont.appendChild(sel);
+    filtersDiv.appendChild(cont);
+    return sel;
+  }
+  const selCat = makeSelect("catFilter", "Catégorie:", categories);
+  const selPays = makeSelect("paysFilter", "Pays:", pays);
+  const selLangue = makeSelect("langueFilter", "Langue:", langues);
+  // Pour le scénario, pas "-- tous --"
+  const contSc = document.createElement('div');
+  const labSc = document.createElement('label');
+  labSc.innerText = "Scénario Rétention:";
+  contSc.appendChild(labSc);
+  const selScenario = document.createElement('select');
+  selScenario.id = "scenarioFilter";
+  selScenario.innerHTML = scenarios.map(s =>
+    `<option value="${s.value}">${s.label}</option>`
+  ).join('');
+  contSc.appendChild(selScenario);
+  filtersDiv.appendChild(contSc);
+
+  // On attache la fonction de MAJ du dashboard (type debounce, rapide !)
+  [selCat, selPays, selLangue, selScenario].forEach(sel =>
+    sel.addEventListener('change', rafraichirDashboard));
+}
+
+// Filtre les data selon selects
+function filterData(allData) {
+  const cat = document.getElementById('catFilter').value;
+  const pays = document.getElementById('paysFilter').value;
+  const lang = document.getElementById('langueFilter').value;
+  // (tous si vide)
+  return allData.filter(d =>
+    (!cat || d.categorie === cat) &&
+    (!pays || d.country === pays) &&
+    (!lang || d.langue === lang)
+  );
+}
+
+// Rétention pour ApexCharts
+function makeRetentionChartSeries(filtered, scenario) {
+  // Pour chaque dataset jeu, une courbe
+  return filtered.map((jeu, idx) => ({
+    name: `${ucfirst(jeu.categorie)} - ${ucfirst(jeu.country)} - ${ucfirst(jeu.langue)}`,
+    data: jeu.retention
+      .filter(r => r[scenario] !== undefined)
+      .map(r => ({x: r.day, y: r[scenario]})),
+    color: couleurs[idx % couleurs.length]
+  }));
+}
+
+// Prépare la data pour chaque KPI mensuel
+function makeMonthlySeries(filtered, kpi) {
+  // On ignore les jeux sans monthlyMetrics
+  const jeuxOk = filtered.filter(j => Array.isArray(j.monthlyMetrics) && j.monthlyMetrics.length);
+  if (!jeuxOk.length) return [];
+  return jeuxOk.map((jeu, idx) => ({
+    name: `${ucfirst(jeu.categorie)} - ${ucfirst(jeu.country)} - ${ucfirst(jeu.langue)}`,
+    data: jeu.monthlyMetrics
+      .map(m => ({x: 'Mois ' + m.mois, y: typeof m[kpi] === "number" ? m[kpi] : null})),
+    color: couleurs[idx % couleurs.length]
+  }));
+}
+
+// Détuit les graphiques ApexCharts existants (évite memory leak !)
+function destroyExistingCharts() {
+  if (window.apexchartsCharts) {
+    window.apexchartsCharts.forEach(chrt => { try { chrt.destroy(); } catch{} });
+    window.apexchartsCharts = [];
+  }
+}
+
+// Rafraichit tout le dashboard selon filtres et onglet utilisateur
+function rafraichirDashboard() {
+  // Mise à jour du titre dynamique
+  document.querySelector('header').textContent = "Dashboard Jeux - " + (userTitles[window.DASH_USER]||'');
+
+  const dashboardDiv = document.getElementById('dashboard');
+  dashboardDiv.innerHTML = ""; // Reset
+
+  destroyExistingCharts();
+
+  // Data filtrée
+  const filtered = filterData(window.ALL_DATA);
+  const scenario = document.getElementById('scenarioFilter').value || "optimiste";
+
+  // --- CARTE 1 : Retention chart (affichée pour tout le monde, car utile aux 3 profils)
+  if (filtered.length && filtered.some(j => Array.isArray(j.retention) && j.retention.length)) {
+    const card = document.createElement('div'); card.className = "card";
+    const title = document.createElement('h2'); title.textContent = "Courbe de Rétention (" + ucfirst(scenario) + ")";
+    card.appendChild(title);
+
+    const chartDiv = document.createElement('div'); chartDiv.id = "retentionChart";
+    chartDiv.style = "min-height:315px";
+    card.appendChild(chartDiv);
+
+    dashboardDiv.appendChild(card);
+
+    // Génère séries
+    const series = makeRetentionChartSeries(filtered, scenario);
+
+    const options = {
+        chart: { type: 'line', height: 320, toolbar: { show: false } },
+        series: series,
+        stroke: { width: 3 },
+        xaxis: {
+          type: "category",
+          title: {text: "Jour"},
+          labels: { rotate: -30, style: {fontSize:'13px'} }
+        },
+        yaxis: { title: { text: "Rétention (%)" }, min: 0, max: 100 },
+        markers: { size: 0 },
+        legend: { show: true },
+        dataLabels: { enabled: false },
+        tooltip: { y: { formatter: val => val + '%' } }
+    };
+    const chart = new ApexCharts(chartDiv, options);
+    chart.render();
+    window.apexchartsCharts = window.apexchartsCharts || [];
+    window.apexchartsCharts.push(chart);
+
+  } else {
+    // Pas de donnée de retention
+    const card = document.createElement('div'); card.className = "card";
+    card.innerHTML = `<div class='no-data'>Aucune donnée de rétention pour ce filtre.</div>`;
+    dashboardDiv.appendChild(card);
+  }
+
+  // --- CARTES 2+ : Un chart par KPI mensuel propre à l'utilisateur courant
+  (userKpiMapping[window.DASH_USER] || []).forEach((kpi, idx) => {
+    const series = makeMonthlySeries(filtered, kpi.key);
+    if (!series.length) return; // Skip si personne
+
+    const card = document.createElement('div'); card.className = "card";
+    const title = document.createElement('h2');
+    title.textContent = kpi.label;
+    card.appendChild(title);
+
+    const chartDiv = document.createElement('div'); chartDiv.id = "monthlyChart_"+idx;
+    chartDiv.style = "min-height:270px";
+    card.appendChild(chartDiv);
+    dashboardDiv.appendChild(card);
+
+    // Labels mois 1 - 12 (trouver le bon range selon data !)
+    const moisLabels = Array.from({length: 12}, (_, i) => 'Mois ' + (i+1));
+
+    const options = {
+        chart: { type: 'line', height: 270, toolbar: { show: false } },
+        series: series,
+        stroke: { width: 2 },
+        xaxis: {
+          type: "category",
+          categories: moisLabels,
+          title: {text: "Mois"},
+          labels: { rotate: 0 }
+        },
+        yaxis: { title: { text: kpi.label } },
+        markers: { size: 2 },
+        legend: { show: true, position: 'top' },
+        dataLabels: { enabled: false },
+        tooltip: { y: { formatter: val => typeof val === "number"? val.toFixed(4) : '-' } }
+    };
+    const chart = new ApexCharts(chartDiv, options);
+    chart.render();
+    window.apexchartsCharts = window.apexchartsCharts || [];
+    window.apexchartsCharts.push(chart);
+  });
+
+  // Si aucun jeu n'a de metrics à afficher :
+  if (dashboardDiv.children.length === 1 &&
+      dashboardDiv.firstChild &&
+      dashboardDiv.firstChild.querySelector('.no-data')) {
+    dashboardDiv.firstChild.style.gridColumn = '1 / -1';
+  }
+}
+
+// --- INIT listeners des onglets utilisateur ---
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('#userTabs .tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('#userTabs .tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      window.DASH_USER = this.getAttribute('data-user');
+      rafraichirDashboard();
+    });
+  });
+});
+
+// INITIALISATION – tout au chargement du JSON/data
+chargerDonnees().then(allData => {
+  window.ALL_DATA = allData;
+  updateFilters(allData);
+  document.getElementById('scenarioFilter').value = "optimiste"; // Valeur par défaut
+  rafraichirDashboard();
+});
+</script>
+</body>
+</html>
